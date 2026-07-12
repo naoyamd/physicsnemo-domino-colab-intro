@@ -41,6 +41,7 @@ def markdown(text: str) -> dict:
 
 
 def code(text: str) -> dict:
+    text = text.replace("{{", "{").replace("}}", "}")
     return {
         "cell_type": "code",
         "execution_count": None,

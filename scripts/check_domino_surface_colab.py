@@ -23,6 +23,11 @@ def main() -> None:
         if cell["cell_type"] != "code":
             continue
         original_source = "".join(cell["source"])
+        if "{{" in original_source or "}}" in original_source:
+            errors.append(
+                (index, "DoubleBrace", "二重波括弧がコードセルに残っています")
+            )
+            continue
         source = "\n".join(
             "pass  # " + line if line.lstrip().startswith("%") else line
             for line in original_source.splitlines()
