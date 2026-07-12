@@ -1,0 +1,55 @@
+{
+  "run_date": "2026-07-12",
+  "source_commit": "d89f0a7",
+  "notebook": "notebooks/domino_surface_only_colab.ipynb",
+  "physicsnemo_version": "2.1.1",
+  "gpu": "Tesla T4",
+  "run_mode": "full",
+  "data_source_mode": "huggingface",
+  "train_minutes": 120,
+  "completed_steps": 115454,
+  "train_case_ids": [382, 243, 499, 68, 346, 146, 178, 341, 344, 272],
+  "validation_case_ids": [481, 417],
+  "test_case_ids": [43, 63],
+  "surface_points_per_case": 8192,
+  "geometry_points_per_case": 4096,
+  "global_grid_resolution": [24, 24, 24],
+  "surface_stencil": "query_plus_3_neighbors",
+  "automatic_mixed_precision": true,
+  "trainable_parameters": 208545,
+  "pressure_mean": -227.91567993164062,
+  "pressure_std": 268.8561096191406,
+  "training_loss_milestones": [
+    {"minute": 1, "loss": 0.370521},
+    {"minute": 10, "loss": 0.093299},
+    {"minute": 30, "loss": 0.038741},
+    {"minute": 60, "loss": 0.016198},
+    {"minute": 90, "loss": 0.011892},
+    {"minute": 119, "loss": 0.008177}
+  ],
+  "test_metrics": [
+    {
+      "case_id": 43,
+      "relative_l2": 0.5140904459682815,
+      "area_weighted_relative_l2": 0.5322103994580398,
+      "mae": 119.61495351493704,
+      "rmse": 201.93044142283418,
+      "correlation": 0.7610499375326963
+    },
+    {
+      "case_id": 63,
+      "relative_l2": 0.5032927325561113,
+      "area_weighted_relative_l2": 0.5203775375728752,
+      "mae": 107.46464092294264,
+      "rmse": 188.4589953074093,
+      "correlation": 0.7809236190900425
+    }
+  ],
+  "mean_test_metrics": {
+    "relative_l2": 0.5086915892621964,
+    "area_weighted_relative_l2": 0.5262939685154575,
+    "mae": 113.53979721893984,
+    "rmse": 195.19471815021975,
+    "correlation": 0.7709867783113694
+  }
+}

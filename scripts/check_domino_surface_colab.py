@@ -16,7 +16,7 @@ NOTEBOOK = PROJECT_ROOT / "notebooks" / "domino_surface_only_colab.ipynb"
 
 
 def main() -> None:
-    notebook = json.loads(NOTEBOOK.read_text())
+    notebook = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
     errors: list[tuple[int, str, str]] = []
 
     for index, cell in enumerate(notebook["cells"]):
