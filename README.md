@@ -8,15 +8,22 @@
 
 PhysicsNeMoの公式 `DoMINO` クラスを、Google Colab上で検証・学習・評価する入門教材です。数分のquick checkと、DrivAerML由来の3次元車両表面点群から表面圧力を学習する120分教材を分けています。
 
-## 最短検証：Google Colab + LLM
+## 最短検証：このページのURLかCLAUDE.mdをLLMに読ませるだけ
 
-1. 上の「数分の疎通確認」バッジから `domino_quickcheck_colab.ipynb` を開きます。
-2. 設定を変えず、`ランタイム` → `すべてのセルを実行` を選びます。
-3. 最終セルのJSONで `status: pass` と全 `checks: true`、最終行で `DOMINO_QUICKCHECK: PASS` を確認します。
+Claude Code、Claude、またはWebページやファイルを読める同等のLLMに、次のどちらかを読ませて検証を依頼するだけです。事前の環境構築やパラメータ設定は不要です。
+
+- このページのURL: https://github.com/naoyamd/physicsnemo-domino-colab-intro
+- ルートの [`CLAUDE.md`](CLAUDE.md): URLを直接参照できないLLMには、ファイルを添付するか本文を貼り付けます。
+
+依頼文は、次の一文だけで始められます。
+
+> このリポジトリのDoMINO quick checkを実行し、CLAUDE.mdの形式で結果を報告してください。
+
+ブラウザを操作できるLLMは、Colabを開いて全セルを実行し、合否まで報告します。ブラウザを操作できないLLMでも、必要なColabリンクと最小限の操作、共有すべき結果を案内します。その場合だけ、案内されたセルの実行と最終出力の共有が必要です。
 
 quick checkは、Google Drive、Hugging Face、APIキー、手動パラメータ設定を使いません。GPUがあれば自動利用し、なければCPUで実行します。公式DoMINOに埋め込み実データを入力し、forward、backward、1 optimizer step、更新後推論までを機械判定します。
 
-Claude Codeはルートの [`CLAUDE.md`](CLAUDE.md) を読み、静的検査とColabランタイム検査を分けて案内・報告できます。別のLLMを含む詳しいコピペ手順は、[LLM + Colab quick start](docs/llm_colab_quickstart.md) を参照してください。
+`CLAUDE.md` はClaude Code向けの規約名ですが、内容は通常のMarkdown手順書なので、他のLLMでも利用できます。詳しい手動手順は、[LLM + Colab quick start](docs/llm_colab_quickstart.md) を参照してください。
 
 > quick checkは実装経路の疎通確認であり、予測精度、CFDの妥当性、フルスケールDoMINoの再現を保証しません。
 
