@@ -49,4 +49,3 @@ DOMINO_QUICKCHECK: PASS
 - installセルで失敗: Colabのランタイムを再接続して全セルを再実行する。継続する場合は、Python・Torch・PhysicsNeMoの表示とinstallセルの全文を共有する。
 - GPUがない: エラーではありません。quick checkは自動的にCPUへ切り替わります。
 - Driveの認証を求められた: 120分教材を開いています。ファイル名が `domino_quickcheck_colab.ipynb` か確認します。
-
